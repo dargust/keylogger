@@ -21,7 +21,7 @@ def OnKeyboardEvent(event):
             chrbuf += chr(event.Ascii)
         else:
             logging.warning(chrbuf)
-            chrbuf = ""
+            chrbuf = chr(event.Ascii)
     shortcuts.update(event.Key)
     return True
 
