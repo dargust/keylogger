@@ -44,6 +44,3 @@ hm = pyHook.HookManager()
 hm.KeyDown = OnKeyboardEvent
 hm.HookKeyboard()
 pythoncom.PumpMessages()
-
-if __name__ == "__main__":
-    pass
